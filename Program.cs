@@ -16,18 +16,18 @@ namespace MyApp
             Console.WriteLine("=".PadRight(60, '='));
             
             // ========== DEMO 1: Async All the Way (BENAR) ==========
-            Console.WriteLine("\n📌 DEMO 1: Async All the Way (Best Practice)");
+            Console.WriteLine("\n DEMO 1: Async All the Way (Best Practice)");
             Console.WriteLine("-".PadRight(50, '-'));
             
             // PERBAIKAN: Panggil dari AsyncDemo, bukan CookingHelper
             string hasilBenar = await AsyncDemo.GetFormattedDataAsync(123);
-            Console.WriteLine($"✅ Hasil (Benar): {hasilBenar}");
+            Console.WriteLine($" Hasil (Benar): {hasilBenar}");
             
             // ========== DEMO 2: Async dengan Memasak (BENAR) ==========
-            Console.WriteLine("\n📌 DEMO 2: Memasak dengan Async (Best Practice)");
+            Console.WriteLine("\n DEMO 2: Memasak dengan Async (Best Practice)");
             Console.WriteLine("-".PadRight(50, '-'));
             
-            Console.WriteLine("🏠 Memulai memasak malam...\n");
+            Console.WriteLine(" Memulai memasak malam...\n");
             
             // MULAI MEMASAK - Semua async, tidak ada blocking
             var nasiTask = CookingHelper.MasakNasiAsync();
@@ -37,20 +37,20 @@ namespace MyApp
             // TUNGGU SEMUA SELESAI - Menggunakan await, bukan .Wait()
             await Task.WhenAll(nasiTask, ayamTask, sayurTask);
             
-            Console.WriteLine("\n🍽️ Semua makanan siap! Makan malam siap disajikan!");
+            Console.WriteLine("\n Semua makanan siap! Makan malam siap disajikan!");
             
             // ========== DEMO 3: LINQ Query ==========
-            Console.WriteLine("\n📌 DEMO 3: LINQ Query dengan Data Produk");
+            Console.WriteLine("\n DEMO 3: LINQ Query dengan Data Produk");
             Console.WriteLine("-".PadRight(50, '-'));
             DemoLINQ();
             
             // ========== DEMO 4: PERBANDINGAN (Baik vs Buruk) ==========
-            Console.WriteLine("\n📌 DEMO 4: Perbandingan Async Best Practice");
+            Console.WriteLine("\n DEMO 4: Perbandingan Async Best Practice");
             Console.WriteLine("-".PadRight(50, '-'));
             await DemoAsyncComparison();
             
             Console.WriteLine("\n" + "=".PadRight(60, '='));
-            Console.WriteLine("✅ SEMUA DEMO SELESAI!");
+            Console.WriteLine(" SEMUA DEMO SELESAI!");
             Console.WriteLine("=".PadRight(60, '='));
         }
         
@@ -86,22 +86,22 @@ namespace MyApp
         // ========== DEMO PERBANDINGAN ASYNC ==========
         public static async Task DemoAsyncComparison()
         {
-            Console.WriteLine("\n🔴 CONTOH SALAH (JANGAN DITIRU):");
+            Console.WriteLine("\n CONTOH SALAH (JANGAN DITIRU):");
             Console.WriteLine("   Mencampur blocking code dengan async");
             Console.WriteLine("   Bisa menyebabkan DEADLOCK!\n");
             
-            // 🔴 CONTOH SALAH - Commented karena berbahaya
+            //  CONTOH SALAH - Commented karena berbahaya
             // var resultSalah = AsyncDemo.GetDataWithBlocking();
             // Console.WriteLine($"Hasil (Salah): {resultSalah}");
             
-            Console.WriteLine("✅ CONTOH BENAR:");
+            Console.WriteLine(" CONTOH BENAR:");
             Console.WriteLine("   Seluruh call stack menggunakan async/await\n");
             
             // PERBAIKAN: Panggil dari AsyncDemo, bukan CookingHelper
             var resultBenar = await AsyncDemo.GetDataInternalAsync(456);
             Console.WriteLine($"Hasil (Benar): {resultBenar}");
             
-            Console.WriteLine("\n💡 PRINSIP: 'Async menular ke atas'");
+            Console.WriteLine("\n PRINSIP: 'Async menular ke atas'");
             Console.WriteLine("   - Sekali async, tetap async sampai ke pemanggil paling atas");
             Console.WriteLine("   - Hindari .Result atau .Wait()");
             Console.WriteLine("   - Gunakan ConfigureAwait(false) di library");

@@ -41,28 +41,28 @@ namespace MyApp.Helpers
     // ============================================
     public static class CookingHelper
     {
-        // 🍚 Memasak Nasi - 5 detik
+        //  Memasak Nasi - 5 detik
         public static async Task MasakNasiAsync()
         {
-            Console.WriteLine("🍚 Mulai masak nasi...");
+            Console.WriteLine(" Mulai masak nasi...");
             await Task.Delay(5000); // 5 detik
-            Console.WriteLine("✅ Nasi matang!");
+            Console.WriteLine(" Nasi matang!");
         }
         
-        // 🍗 Memasak Ayam - 3 detik
+        //  Memasak Ayam - 3 detik
         public static async Task MasakAyamAsync()
         {
             Console.WriteLine("🍗 Mulai goreng ayam...");
             await Task.Delay(3000); // 3 detik
-            Console.WriteLine("✅ Ayam goreng siap!");
+            Console.WriteLine(" Ayam goreng siap!");
         }
         
-        // 🥬 Memasak Sayur - 2 detik
+        //  Memasak Sayur - 2 detik
         public static async Task MasakSayurAsync()
         {
-            Console.WriteLine("🥬 Mulai tumis sayur...");
+            Console.WriteLine(" Mulai tumis sayur...");
             await Task.Delay(2000); // 2 detik
-            Console.WriteLine("✅ Sayur tumis siap!");
+            Console.WriteLine(" Sayur tumis siap!");
         }
     }
 
@@ -71,7 +71,7 @@ namespace MyApp.Helpers
     // ============================================
     public static class AsyncDemo
     {
-        // ✅ BENAR: Async all the way
+        //  BENAR: Async all the way
         public static async Task<string> GetDataInternalAsync(int id)
         {
             // Untuk library, ConfigureAwait(false) menghindari 
@@ -87,7 +87,7 @@ namespace MyApp.Helpers
             return $"Formatted: {rawData}";
         }
         
-        // ❌ SALAH: Mencampur blocking dengan async (BERBAHAYA!)
+        //  SALAH: Mencampur blocking dengan async (BERBAHAYA!)
         // Method ini bisa menyebabkan DEADLOCK!
         public static string GetDataWithBlocking()
         {
@@ -113,7 +113,7 @@ namespace MyApp.Controllers
     // ============================================
     public static class ControllerSimulator
     {
-        // ✅ BENAR: Controller juga async
+        //  BENAR: Controller juga async
         public static async Task<string> GetUserEndpoint(int id)
         {
             var data = await Helpers.AsyncDemo.GetFormattedDataAsync(id);
