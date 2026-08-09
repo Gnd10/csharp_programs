@@ -20,7 +20,9 @@ namespace cleancode
                 new Produk { Nama = "Laptop Asus", Harga = 12000000, Kategori = "Elektronik" },
                 new Produk { Nama = "Mouse Wireless", Harga = 250000, Kategori = "Elektronik" },
                 new Produk { Nama = "Meja Kerja", Harga = 850000, Kategori = "Furnitur" },
-                new Produk { Nama = "Keyboard Mechanical", Harga = 700000, Kategori = "Elektronik" }
+                new Produk { Nama = "Keyboard Mechanical", Harga = 700000, Kategori = "Elektronik" },
+                new Produk { Nama = "Montior 32 Inch", Harga = 850000, Kategori = "Elektronik"},
+                new Produk { Nama = "Kursi Gaming", Harga = 1000000, Kategori = "Furnitur" }
             };
         }
     }

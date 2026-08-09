@@ -19,9 +19,9 @@ class Program
          // 1. Ambil data dari file Produk.cs
             List<Produk> semuaProduk = DataRepository.AmbilDaftarProduk();
 
-            // 2. Jalankan LINQ (Contoh: Cari barang Elektronik yang harganya di atas 500rb)
+            // 2. Jalankan LINQ (Contoh: Cari barang Furniture yang harganya di atas 100rb)
             var produkPilihan = semuaProduk
-                .Where(p => p.Kategori == "Elektronik" && p.Harga > 500000)
+                .Where(p => p.Kategori == "Furnitur" && p.Harga > 100000)
                 .OrderBy(p => p.Harga)
                 .ToList();
 
@@ -29,7 +29,7 @@ class Program
             Console.WriteLine("=== DAFTAR PRODUK ELEKTRONIK PILIHAN ===");
             foreach (var item in produkPilihan)
             {
-                Console.WriteLine($"- {item.Nama} | Harga: Rp {item.Harga:N0}");
+                Console.WriteLine($"- {item.Nama} | Harga: Rp {item.Harga:N2}");
             }
 
     }
