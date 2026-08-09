@@ -27,4 +27,31 @@ namespace cleancode
         }
     }
 
+    public static class CookingHelper
+    {
+        public static async Task MasakNasiAsync()
+        {
+        Console.WriteLine("Mulai masak nasi...");
+        await Task.Delay(5000); // 5 detik
+        Console.WriteLine("✅ Nasi matang!");
+        }
+    
+        public static async Task MasakAyamAsync()
+        {
+        Console.WriteLine("Mulai goreng ayam...");
+        await Task.Delay(3000); // 3 detik
+        Console.WriteLine("✅ Ayam goreng siap!");
+        }
+    
+        public static async Task MasakSayurAsync()
+        {
+        Console.WriteLine("Mulai tumis sayur...");
+        await Task.Delay(2000); // 2 detik
+        Console.WriteLine("✅ Sayur tumis siap!");
+        }
+
+
+    }
+   
+
 }
